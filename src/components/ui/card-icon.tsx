@@ -32,7 +32,7 @@ export function CardIcon({ provider, teacher }: CardIconProps) {
 			return (
 				<>
 					{teacher && `${teacher}, pela `}
-					{provider.toUpperCase()}
+					{provider.toUpperCase()} -
 				</>
 			);
 	}

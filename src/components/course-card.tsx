@@ -24,7 +24,7 @@ export function CourseCard({ course }: CourseCardProps) {
 					<CardIcon provider={course.provider} teacher={course.teacher} />{" "}
 					{course.name}
 				</h3>
-				<p>
+				<p className="italic">
 					{course.length && (
 						<span className="font-semibold">({course.length} Horas) </span>
 					)}
