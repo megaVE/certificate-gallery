@@ -3,6 +3,7 @@ import {
 	sortByCompleteDate,
 	sortByLength,
 	sortByProvider,
+	sortByTeacher,
 } from "../../utils/sorting";
 
 export type FiltersType = "concludedAt" | "length" | "provider" | "teacher";
@@ -20,5 +21,5 @@ export const FiltersSortingMap = new Map<FiltersType, FilterFunction>([
 	["concludedAt", sortByCompleteDate],
 	["length", sortByLength],
 	["provider", sortByProvider],
-	["teacher", undefined],
+	["teacher", sortByTeacher],
 ]);

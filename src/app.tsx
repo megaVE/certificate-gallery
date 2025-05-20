@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import githubIcon from "./assets/icons/github-icon.svg";
+import type { Course } from "./@types/course";
 import searchIcon from "./assets/icons/search-icon.svg";
 import { CourseCard } from "./components/course-card";
+import { Footer } from "./components/footer";
+import { Header } from "./components/header";
 import { Button } from "./components/ui/button";
 import {
 	FiltersMap,
@@ -13,43 +15,29 @@ import { cn } from "./lib/utils";
 
 export function App() {
 	const [query, setQuery] = useState("");
+	const [courses, setCourses] = useState<Course[]>([...courseList]);
 	const [currentFilter, setCurrentFilter] = useState<FiltersType | null>(null);
 
 	const filteredCourseList = query
-		? courseList.filter((course) =>
+		? courses.filter((course) =>
 				(course.name + course.tags.join(" "))
 					.toLowerCase()
 					.includes(query.toLowerCase()),
 			)
-		: courseList;
+		: courses;
 
 	useEffect(() => {
-		// TODO - Evitar modificar o array original como "efeito colateral"
-		// TODO - Buscar uma forma de voltar a ordem original do array após ordenado
 		if (!currentFilter) {
-			filteredCourseList.sort();
+			setCourses([...courseList].sort());
 		} else {
-			filteredCourseList.sort(FiltersSortingMap.get(currentFilter));
+			setCourses([...courseList].sort(FiltersSortingMap.get(currentFilter)));
 		}
 		console.log("s");
-	}, [filteredCourseList, currentFilter]);
+	}, [currentFilter]);
 
 	return (
 		<>
-			<header className="bg-black text-gray-100 p-8 antialiased">
-				<div className="border-t-2 border-b-2 border-gray-100 py-4 md:pl-8 text-center md:text-left">
-					<h1 className="text-3xl font-bold upper">Certificate Gallery</h1>
-					<a href="https://github.com/megaVE" className="text-sm">
-						por
-						<img
-							className="inline-block white-filter px-1"
-							src={githubIcon}
-							alt=""
-						/>
-						Vinícius Eduardo
-					</a>
-				</div>
-			</header>
+			<Header />
 			<form
 				className="flex flex-col md:flex-row items-center gap-8 my-2 p-4 bg-black text-gray-100"
 				onSubmit={(e) => e.preventDefault()}
@@ -103,18 +91,18 @@ export function App() {
 						? `${filteredCourseList.length} resultado${filteredCourseList.length > 1 ? "s" : ""}`
 						: "Nenhum resultado"}
 				</div>
-				<ul className="space-y-2">
-					{filteredCourseList.map((course) => (
-						<CourseCard
-							key={`${course.name}${course.provider}`}
-							course={course}
-						/>
-					))}
-				</ul>
+				{filteredCourseList.length > 0 && (
+					<ul className="space-y-2">
+						{filteredCourseList.map((course) => (
+							<CourseCard
+								key={`${course.name}${course.provider}`}
+								course={course}
+							/>
+						))}
+					</ul>
+				)}
 			</main>
-			<footer className="mt-2 bg-black text-gray-100 text-center p-8 font-semibold">
-				&copy;megaVE - {new Date().getFullYear()}
-			</footer>
+			<Footer />
 		</>
 	);
 }

@@ -8,57 +8,21 @@ import skillsIcon from "../assets/icons/card-list-icon.svg";
 import completedIcon from "../assets/icons/check-square-icon.svg";
 import professorIcon from "../assets/icons/person-square-icon.svg";
 
-import aluraIcon from "../assets/icons/alura-icon.png";
-import rocketseatIcon from "../assets/icons/rocketseat-icon.png";
-import udemyIcon from "../assets/icons/udemy-icon.png";
-
 import { monthNumberToString } from "../utils/parser";
 import { Button } from "./ui/button";
+import { CardIcon } from "./ui/card-icon";
 
 interface CourseCardProps {
 	course: Course;
 }
 
 export function CourseCard({ course }: CourseCardProps) {
-	function processedCourseProvider() {
-		switch (course.provider) {
-			case "Udemy":
-				return (
-					<img
-						className="inline-block size-6 mr-2"
-						src={udemyIcon}
-						alt="Udemy"
-					/>
-				);
-
-			case "Rocketseat":
-				return (
-					<img
-						className="inline-block size-6 mr-2"
-						src={rocketseatIcon}
-						alt="Rocketseat"
-					/>
-				);
-
-			case "Alura":
-				return (
-					<img
-						className="inline-block size-6 mr-2"
-						src={aluraIcon}
-						alt="Alura"
-					/>
-				);
-
-			default:
-				return <>{course.provider.toUpperCase()}</>;
-		}
-	}
-
 	return (
 		<div className="border border-gray-100 text-gray-100 rounded-xl p-4 shadow-md">
 			<article className="space-y-4">
 				<h3 className="font-bold text-lg md:text-xl text-center md:text-left">
-					{processedCourseProvider()} {course.name}
+					<CardIcon provider={course.provider} teacher={course.teacher} />{" "}
+					{course.name}
 				</h3>
 				<p>
 					{course.length && (

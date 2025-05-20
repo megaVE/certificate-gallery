@@ -19,3 +19,11 @@ export function sortByLength(a: Course, b: Course) {
 export function sortByProvider(a: Course, b: Course) {
 	return a.provider.localeCompare(b.provider);
 }
+
+export function sortByTeacher(a: Course, b: Course) {
+	if (!a.teacher && !b.teacher) return sortByProvider(a, b);
+	if (!a.teacher) return 1;
+	if (!b.teacher) return -1;
+
+	return a.teacher.localeCompare(b.teacher);
+}
