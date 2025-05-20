@@ -4,6 +4,12 @@ import onlineFileIcon from "../assets/icons/file-earmark-pdf-icon.svg";
 import localFileIcon from "../assets/icons/filetype-pdf-icon.svg";
 import githubIcon from "../assets/icons/github-icon.svg";
 
+import skillsIcon from "../assets/icons/card-list-icon.svg";
+import completedIcon from "../assets/icons/check-square-icon.svg";
+import professorIcon from "../assets/icons/person-square-icon.svg";
+
+import aluraIcon from "../assets/icons/alura-icon.png";
+import rocketseatIcon from "../assets/icons/rocketseat-icon.png";
 import udemyIcon from "../assets/icons/udemy-icon.png";
 
 import { monthNumberToString } from "../utils/parser";
@@ -25,6 +31,24 @@ export function CourseCard({ course }: CourseCardProps) {
 					/>
 				);
 
+			case "Rocketseat":
+				return (
+					<img
+						className="inline-block size-6 mr-2"
+						src={rocketseatIcon}
+						alt="Rocketseat"
+					/>
+				);
+
+			case "Alura":
+				return (
+					<img
+						className="inline-block size-6 mr-2"
+						src={aluraIcon}
+						alt="Alura"
+					/>
+				);
+
 			default:
 				return <>{course.provider.toUpperCase()}</>;
 		}
@@ -33,7 +57,7 @@ export function CourseCard({ course }: CourseCardProps) {
 	return (
 		<div className="border border-gray-100 text-gray-100 rounded-xl p-4 shadow-md">
 			<article className="space-y-4">
-				<h3 className="font-bold text-xl">
+				<h3 className="font-bold text-lg md:text-xl text-center md:text-left">
 					{processedCourseProvider()} {course.name}
 				</h3>
 				<p>
@@ -43,27 +67,32 @@ export function CourseCard({ course }: CourseCardProps) {
 					{course.description}
 				</p>
 			</article>
-			<div className="w-full flex justify-between items-end">
-				<div className="flex-1 text-sm">
+			<div className="mt-4 w-full flex flex-col md:flex-row justify-between md:items-end">
+				<div className="flex-1 text-sm space-y-2">
 					{course.completedAt && (
-						<>
+						<p className="flex items-center gap-2">
+							<img className="white-filter size-4" src={completedIcon} alt="" />
 							Completo em{" "}
 							<span className="font-semibold mr-4">
 								{monthNumberToString(course.completedAt.getMonth())} de{" "}
 								{course.completedAt.getFullYear()}
 							</span>
-						</>
+						</p>
 					)}
 					{course.teacher && (
-						<>
+						<p className="flex items-center gap-2">
+							<img className="white-filter size-4" src={professorIcon} alt="" />
 							Ministrado por{" "}
 							<span className="font-semibold mr-4">{course.teacher}</span>
-						</>
+						</p>
 					)}
-					Competências:{" "}
-					<span className="font-semibold">{course.tags.join(", ")}</span>
+					<p className="flex items-center gap-2">
+						<img className="white-filter size-4" src={skillsIcon} alt="" />
+						Competências:{" "}
+						<span className="font-semibold">{course.tags.join(", ")}</span>
+					</p>
 				</div>
-				<div className="flex justify-center gap-4">
+				<div className="flex justify-center gap-4 mt-4 md:mt-0">
 					{course.githubUrl && (
 						<a href={course.githubUrl} target="_blank" rel="noreferrer">
 							<Button className="hover:bg-slate-700 border-2 border-slate-700 text-slate-50 flex items-center gap-1">
@@ -72,7 +101,7 @@ export function CourseCard({ course }: CourseCardProps) {
 									src={githubIcon}
 									alt=""
 								/>
-								<span>Ver Repositório</span>
+								<span className="hidden md:inline">Ver Repositório</span>
 							</Button>
 						</a>
 					)}
@@ -84,7 +113,7 @@ export function CourseCard({ course }: CourseCardProps) {
 									src={onlineFileIcon}
 									alt=""
 								/>
-								<span>Ver Certificado Online</span>
+								<span className="hidden md:inline">Ver Certificado Online</span>
 							</Button>
 						</a>
 					)}
@@ -96,7 +125,7 @@ export function CourseCard({ course }: CourseCardProps) {
 									src={localFileIcon}
 									alt=""
 								/>
-								<span>Ver PDF</span>
+								<span className="hidden md:inline">Ver PDF</span>
 							</Button>
 						</a>
 					)}

@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import githubIcon from "./assets/icons/github-icon.svg";
 import searchIcon from "./assets/icons/search-icon.svg";
 import { CourseCard } from "./components/course-card";
 import { Button } from "./components/ui/button";
-import { FiltersMap, type FiltersType } from "./constants/map/filters";
+import {
+	FiltersMap,
+	FiltersSortingMap,
+	type FiltersType,
+} from "./constants/map/filters";
 import { courseList } from "./data/course-list";
 import { cn } from "./lib/utils";
 
@@ -19,10 +23,21 @@ export function App() {
 			)
 		: courseList;
 
+	useEffect(() => {
+		// TODO - Evitar modificar o array original como "efeito colateral"
+		// TODO - Buscar uma forma de voltar a ordem original do array após ordenado
+		if (!currentFilter) {
+			filteredCourseList.sort();
+		} else {
+			filteredCourseList.sort(FiltersSortingMap.get(currentFilter));
+		}
+		console.log("s");
+	}, [filteredCourseList, currentFilter]);
+
 	return (
 		<>
 			<header className="bg-black text-gray-100 p-8 antialiased">
-				<div className="border-t-2 border-b-2 border-gray-100 py-4 pl-8">
+				<div className="border-t-2 border-b-2 border-gray-100 py-4 md:pl-8 text-center md:text-left">
 					<h1 className="text-3xl font-bold upper">Certificate Gallery</h1>
 					<a href="https://github.com/megaVE" className="text-sm">
 						por
@@ -36,7 +51,7 @@ export function App() {
 				</div>
 			</header>
 			<form
-				className="my-2 p-4 bg-black text-gray-100 flex items-center gap-8"
+				className="flex flex-col md:flex-row items-center gap-8 my-2 p-4 bg-black text-gray-100"
 				onSubmit={(e) => e.preventDefault()}
 			>
 				<div className="flex items-center border border-gray-100 p-2 rounded-md w-fit">
@@ -58,7 +73,7 @@ export function App() {
 					</Button>
 				</div>
 				<div>
-					<ul className="flex items-center gap-4">
+					<ul className="flex flex-col md:flex-row items-center gap-4">
 						<h4 className="font-semibold text-lg">Ordenar por:</h4>
 						{Array.from(FiltersMap, ([key, value]) => ({ key, value })).map(
 							(filter) => (
