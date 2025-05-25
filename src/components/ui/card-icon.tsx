@@ -2,6 +2,9 @@ import aluraIcon from "../../assets/icons/alura-icon.png";
 import rocketseatIcon from "../../assets/icons/rocketseat-icon.png";
 import udemyIcon from "../../assets/icons/udemy-icon.png";
 
+import hdcIcon from "../../assets/icons/hora-de-codar-icon.png";
+import unifalIcon from "../../assets/icons/unifal-icon.png";
+
 interface CardIconProps {
 	provider: string;
 	teacher?: string;
@@ -26,6 +29,24 @@ export function CardIcon({ provider, teacher }: CardIconProps) {
 		case "Alura":
 			return (
 				<img className="inline-block size-6 mr-2" src={aluraIcon} alt="Alura" />
+			);
+
+		case "Hora de Codar":
+			return (
+				<img
+					className="inline-block size-6 mr-2"
+					src={hdcIcon}
+					alt="Hora de Codar"
+				/>
+			);
+
+		case "Unifal":
+			return (
+				<img
+					className="inline-block size-6 mr-2"
+					src={unifalIcon}
+					alt="Unifal"
+				/>
 			);
 
 		default:
