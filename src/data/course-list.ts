@@ -233,6 +233,16 @@ export const courseList: Course[] = [
 		url: "https://www.udemy.com/certificate/UC-a28291fd-fc2c-458a-b1e5-2f606f6edcb4/",
 		githubUrl: "https://github.com/megaVE/the-perfect-cup",
 	},
+	{
+		name: "Certified Python Developer - Practice Tests",
+		provider: "Udemy",
+		description: 
+			"Prepare for an interview as a Python Developer - Validate Your Skills and Boost Your Career!",
+		tags: ["Python", "Pytest"],
+		teacher: "Paweł Krakowiak",
+		completedAt: new Date("2025-05-25"),
+		path: "udemy/certified-python-developer.png",
+	},
 	// Rocketseat
 	{
 		name: "Desafio de Micro Saas",

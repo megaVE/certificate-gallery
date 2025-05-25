@@ -13,7 +13,7 @@ export function Header() {
 						<img
 							className="inline-block white-filter px-1"
 							src={githubIcon}
-							alt=""
+							alt="GitHub"
 						/>
 						Vinícius Eduardo
 					</a>

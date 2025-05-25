@@ -35,7 +35,7 @@ export function CourseCard({ course }: CourseCardProps) {
 				<div className="flex-1 text-sm space-y-2">
 					{course.completedAt && (
 						<p className="flex items-center gap-2">
-							<img className="white-filter size-4" src={completedIcon} alt="" />
+							<img className="white-filter size-4" src={completedIcon} alt="Ok" />
 							Completo em{" "}
 							<span className="font-semibold mr-4">
 								{monthNumberToString(course.completedAt.getMonth())} de{" "}
@@ -45,13 +45,13 @@ export function CourseCard({ course }: CourseCardProps) {
 					)}
 					{course.teacher && (
 						<p className="flex items-center gap-2">
-							<img className="white-filter size-4" src={professorIcon} alt="" />
+							<img className="white-filter size-4" src={professorIcon} alt="Professor" />
 							Ministrado por{" "}
 							<span className="font-semibold mr-4">{course.teacher}</span>
 						</p>
 					)}
 					<p className="flex items-center gap-2">
-						<img className="white-filter size-4" src={skillsIcon} alt="" />
+						<img className="white-filter size-4" src={skillsIcon} alt="Skills" />
 						Competências:{" "}
 						<span className="font-semibold">{course.tags.join(", ")}</span>
 					</p>
@@ -63,7 +63,7 @@ export function CourseCard({ course }: CourseCardProps) {
 								<img
 									className="white-filter inline-block size-4"
 									src={githubIcon}
-									alt=""
+									alt="GitHub"
 								/>
 								<span className="hidden md:inline">Ver Repositório</span>
 							</Button>
@@ -75,7 +75,7 @@ export function CourseCard({ course }: CourseCardProps) {
 								<img
 									className="white-filter inline-block size-4"
 									src={onlineFileIcon}
-									alt=""
+									alt="Online"
 								/>
 								<span className="hidden md:inline">Ver Certificado Online</span>
 							</Button>
@@ -87,8 +87,9 @@ export function CourseCard({ course }: CourseCardProps) {
 								<img
 									className="white-filter inline-block size-4"
 									src={localFileIcon}
-									alt=""
+									alt="PDF"
 								/>
+								{/* TODO Criar condicional para certificados em não-PDF */}
 								<span className="hidden md:inline">Ver PDF</span>
 							</Button>
 						</a>
