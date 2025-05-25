@@ -236,7 +236,7 @@ export const courseList: Course[] = [
 	{
 		name: "Certified Python Developer - Practice Tests",
 		provider: "Udemy",
-		description: 
+		description:
 			"Prepare for an interview as a Python Developer - Validate Your Skills and Boost Your Career!",
 		tags: ["Python", "Pytest"],
 		teacher: "Paweł Krakowiak",
@@ -454,5 +454,14 @@ export const courseList: Course[] = [
 		completedAt: new Date("2025-03-15"),
 		path: "misc/do-zero-ao-junior.pdf",
 		url: "https://app.horadecodar.com.br/certificates/40/user/4696/certificate-authenticity",
+	},
+	{
+		name: "Oficina: Comunicação oral e escrita: diálogos sobre cultura em língua inglesa",
+		provider: "Unifal",
+		description: "Projeto de Extensão",
+		tags: ["Inglês", "Cultura Inglesa"],
+		length: 16,
+		completedAt: new Date("22-12-2022"),
+		path: "misc/projeto-isf.pdf",
 	},
 ];

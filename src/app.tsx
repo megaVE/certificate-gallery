@@ -20,7 +20,12 @@ export function App() {
 
 	const filteredCourseList = query
 		? courses.filter((course) =>
-				(course.name + course.tags.join(" "))
+				(
+					course.name +
+					course.tags.join(" ") +
+					course.provider +
+					(course.teacher ?? "")
+				)
 					.toLowerCase()
 					.includes(query.toLowerCase()),
 			)

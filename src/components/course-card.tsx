@@ -3,6 +3,7 @@ import type { Course } from "../@types/course";
 import onlineFileIcon from "../assets/icons/file-earmark-pdf-icon.svg";
 import localFileIcon from "../assets/icons/filetype-pdf-icon.svg";
 import githubIcon from "../assets/icons/github-icon.svg";
+import unknownLocalFileIcon from "../assets/icons/patch-check-icon.svg";
 
 import skillsIcon from "../assets/icons/card-list-icon.svg";
 import completedIcon from "../assets/icons/check-square-icon.svg";
@@ -35,7 +36,11 @@ export function CourseCard({ course }: CourseCardProps) {
 				<div className="flex-1 text-sm space-y-2">
 					{course.completedAt && (
 						<p className="flex items-center gap-2">
-							<img className="white-filter size-4" src={completedIcon} alt="Ok" />
+							<img
+								className="white-filter size-4"
+								src={completedIcon}
+								alt="Ok"
+							/>
 							Completo em{" "}
 							<span className="font-semibold mr-4">
 								{monthNumberToString(course.completedAt.getMonth())} de{" "}
@@ -45,13 +50,21 @@ export function CourseCard({ course }: CourseCardProps) {
 					)}
 					{course.teacher && (
 						<p className="flex items-center gap-2">
-							<img className="white-filter size-4" src={professorIcon} alt="Professor" />
+							<img
+								className="white-filter size-4"
+								src={professorIcon}
+								alt="Professor"
+							/>
 							Ministrado por{" "}
 							<span className="font-semibold mr-4">{course.teacher}</span>
 						</p>
 					)}
 					<p className="flex items-center gap-2">
-						<img className="white-filter size-4" src={skillsIcon} alt="Skills" />
+						<img
+							className="white-filter size-4"
+							src={skillsIcon}
+							alt="Skills"
+						/>
 						Competências:{" "}
 						<span className="font-semibold">{course.tags.join(", ")}</span>
 					</p>
@@ -82,16 +95,30 @@ export function CourseCard({ course }: CourseCardProps) {
 						</a>
 					)}
 					{course.path && (
-						<a href={`pdfs/${course.path}`} target="_blank" rel="noreferrer">
-							<Button className="hover:bg-red-700 border-2 border-red-700 text-red-50 flex items-center gap-1">
-								<img
-									className="white-filter inline-block size-4"
-									src={localFileIcon}
-									alt="PDF"
-								/>
-								{/* TODO Criar condicional para certificados em não-PDF */}
-								<span className="hidden md:inline">Ver PDF</span>
-							</Button>
+						<a
+							href={`certificates/${course.path}`}
+							target="_blank"
+							rel="noreferrer"
+						>
+							{course.path.endsWith("pdf") ? (
+								<Button className="hover:bg-red-700 border-2 border-red-700 text-red-50 flex items-center gap-1">
+									<img
+										className="white-filter inline-block size-4"
+										src={localFileIcon}
+										alt="PDF"
+									/>
+									<span className="hidden md:inline">Ver PDF</span>
+								</Button>
+							) : (
+								<Button className="hover:bg-blue-700 border-2 border-blue-700 text-blue-50 flex items-center gap-1">
+									<img
+										className="white-filter inline-block size-4"
+										src={unknownLocalFileIcon}
+										alt="Certificado"
+									/>
+									<span className="hidden md:inline">Ver Comprovante</span>
+								</Button>
+							)}
 						</a>
 					)}
 				</div>
