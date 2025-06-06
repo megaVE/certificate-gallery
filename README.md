@@ -15,3 +15,5 @@ PT: O Certificate Gallery é um projeto pessoal desenvolvido com o objetivo de o
 - Link para o diploma virtual ou arquivo PDF do certificado
 
 Essa galeria serve como um portfólio acadêmico e técnico, demonstrando comprometimento com o aprendizado contínuo e a aplicação prática dos conhecimentos adquiridos.
+
+![1747785333155](https://github.com/user-attachments/assets/c4c22632-6d0c-4a5a-b7ca-9637c4a1854f)
