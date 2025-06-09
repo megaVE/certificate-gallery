@@ -398,6 +398,24 @@ export const courseList: Course[] = [
 		githubUrl: "https://github.com/megaVE/nlw-expert-react",
 	},
 	{
+		name: "Clean Code",
+		provider: "Rocketseat",
+		description:
+			"Princípios e técnicas de código limpo aplicadas ao JavaScript com ReactJS e Node.js.",
+		tags: [
+			"Clean Code",
+			"JavaScript",
+			"TypeScript",
+			"React",
+			"TypeScript",
+		],
+		length: 3,
+		completedAt: new Date("2025-06-09"),
+		path: "rocketseat/clean-code-react-node.pdf",
+		url: "https://app.rocketseat.com.br/certificates/ac625a39-3d5b-480f-899d-49e84f23cab4",
+		githubUrl: "https://github.com/megaVE/rocketseat-clean-code",
+	},
+	{
 		name: "NLW Expert trilha de HTML, CSS e Javascript",
 		provider: "Rocketseat",
 		description:
