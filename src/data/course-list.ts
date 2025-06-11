@@ -439,6 +439,16 @@ export const courseList: Course[] = [
 		path: "rocketseat/rocketseat-class-decisoes.pdf",
 		url: "https://app.rocketseat.com.br/certificates/9922b1c1-bce5-4bde-8581-114f5b1239a9",
 	},
+	// Fiap
+	{
+		name: "Fundamentos de Desenvolvimento em Java",
+		provider: "Fiap",
+		description: "",
+		tags: ["Docker", "Java", "Spring Boot", "Design Patterns", "SOLID"],
+		completedAt: new Date("2025-03-18"),
+		path: "fiap/fundamentos_de_desenvolvimento_em_java.jpeg",
+		githubUrl: "https://github.com/FIAP-24/tech_challenge_1"
+	},
 	// Alura
 	{
 		name: "PostgreSQL",
