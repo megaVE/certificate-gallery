@@ -398,6 +398,21 @@ export const courseList: Course[] = [
 		githubUrl: "https://github.com/megaVE/nlw-expert-react",
 	},
 	{
+		name: "SEO para Devs",
+		provider: "Rocketseat",
+		description:
+			"Search Engine Optimization, Core Web Vitals, Crawling, Indexing, Sitemap, Robots.txt, Redirecionamentos, Sitelinks, Dados estruturados, Metatags, Open Graph, Otimizações, Lazy Load Third Party Content, Mobile Friendly, Google Search Console, Lighthouse, Keywords.",
+		tags: [
+			"SEO",
+			"Core Web Vitals",
+			"HTML Semântico"
+		],
+		length: 2,
+		completedAt: new Date("2025-06-17"),
+		path: "rocketseat/seo-for-devs.pdf",
+		url: "https://app.rocketseat.com.br/certificates/5aa4f8c2-5956-40d0-b2bb-645496f61219",
+	},
+	{
 		name: "Clean Code",
 		provider: "Rocketseat",
 		description:
