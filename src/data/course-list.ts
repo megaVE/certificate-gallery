@@ -444,6 +444,30 @@ export const courseList: Course[] = [
 		githubUrl: "https://github.com/megaVE/nlw-expert-html",
 	},
 	{
+		name: "Fundamentos do React",
+		provider: "Rocketseat",
+		description:
+			"Componentes, Estados, Propriedades, DOM e Virtual DOM, formas de rodar React, JSX, estilização, Tailwind, eventos, React Hooks, renderizações condicionais, renderização de listas, filtragem, API de Contexto, ciclo de vida, hooks customizados e desenvolvimento de projeto de calculadora.",
+
+		tags: ["React", "HTML", "CSS", "JavaScript", "Tailwind"],
+		length: 6,
+		completedAt: new Date("2025-06-17"),
+		path: "rocketseat/fundamentos-react.pdf",
+		url: "https://app.rocketseat.com.br/certificates/191a7bb0-f56a-468c-9849-d3994ed0c273",
+	},
+	{
+		name: "Fundamentos do Java",
+		provider: "Rocketseat",
+		description:
+			"Java,JDK,JRE,JVM, Tipos de dados, Controles de Fluxo, Estruturas de repetição, POO, Operadores, Java Time, Java N-IO, Exceções, Expressões.",
+
+		tags: ["Java", "Orientação a Objetos"],
+		length: 6,
+		completedAt: new Date("2025-06-18"),
+		path: "rocketseat/fundamentos-java.pdf",
+		url: "https://app.rocketseat.com.br/certificates/191a7bb0-f56a-468c-9849-d3994ed0c273",
+	},
+	{
 		name: "Rocketseat Class - Os mecanismos invisíveis por trás das suas decisões",
 		provider: "Rocketseat",
 		description:
@@ -499,7 +523,7 @@ export const courseList: Course[] = [
 		name: "Java OO: entendendo a Orientação a Objetos",
 		provider: "Alura",
 		description: "",
-		tags: ["Java"],
+		tags: ["Orientação a Objetos", "Java"],
 		length: 8,
 		completedAt: new Date("2025-01-13"),
 		// path: "alura/java-oo.pdf",
