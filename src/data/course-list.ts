@@ -274,7 +274,7 @@ export const courseList: Course[] = [
 			"PostgreSQL",
 			"Grafana",
 			"AWS Fargate",
-			"Pulumi"
+			"Pulumi",
 		],
 		length: 5,
 		completedAt: new Date("2025-06-06"),
@@ -342,6 +342,29 @@ export const courseList: Course[] = [
 		githubUrl: "https://github.com/megaVE/nlw-journey-java",
 	},
 	{
+		name: "NLW Agents - Avançado",
+		provider: "Rocketseat",
+		description:
+			"Construção de aplicações full-stack, conguração de back-end com Node.js e Fastify, uso de Docker e PostgreSQL com Drizzle ORM, desenvolvimento de front-end com React, Vite e Tailwind CSS, gerenciamento de rotas com React Router DOM, consumo de APIs com React Query, criação de hooks personalizados, gravação e upload de áudio no navegador e integração com Inteligência Articial para transcrição, geração de embeddings e criação de respostas inteligentes com a API do Gemini.",
+		tags: [
+			"Gemini API",
+			"NodeJS",
+			"ReactJS",
+			"Fastify",
+			"Docker",
+			"PostgreSQL",
+			"DrizzleORM",
+			"Vite",
+			"Tailwind",
+			"React Query",
+		],
+		length: 5,
+		completedAt: new Date("2025-07-11"),
+		path: "rocketseat/nlw-agents.pdf",
+		url: "https://app.rocketseat.com.br/certificates/d21a50e3-0fba-4120-9c6a-5be40cddf598",
+		githubUrl: "https://github.com/megaVE/nlw-agents",
+	},
+	{
 		name: "NLW Pocket: Javascript - Full-stack Intermediário",
 		provider: "Rocketseat",
 		description:
@@ -402,11 +425,7 @@ export const courseList: Course[] = [
 		provider: "Rocketseat",
 		description:
 			"Search Engine Optimization, Core Web Vitals, Crawling, Indexing, Sitemap, Robots.txt, Redirecionamentos, Sitelinks, Dados estruturados, Metatags, Open Graph, Otimizações, Lazy Load Third Party Content, Mobile Friendly, Google Search Console, Lighthouse, Keywords.",
-		tags: [
-			"SEO",
-			"Core Web Vitals",
-			"HTML Semântico"
-		],
+		tags: ["SEO", "Core Web Vitals", "HTML Semântico"],
 		length: 2,
 		completedAt: new Date("2025-06-17"),
 		path: "rocketseat/seo-for-devs.pdf",
@@ -417,13 +436,7 @@ export const courseList: Course[] = [
 		provider: "Rocketseat",
 		description:
 			"Princípios e técnicas de código limpo aplicadas ao JavaScript com ReactJS e Node.js.",
-		tags: [
-			"Clean Code",
-			"JavaScript",
-			"TypeScript",
-			"React",
-			"TypeScript",
-		],
+		tags: ["Clean Code", "JavaScript", "TypeScript", "React", "TypeScript"],
 		length: 3,
 		completedAt: new Date("2025-06-09"),
 		path: "rocketseat/clean-code-react-node.pdf",
@@ -462,7 +475,7 @@ export const courseList: Course[] = [
 			"Java,JDK,JRE,JVM, Tipos de dados, Controles de Fluxo, Estruturas de repetição, POO, Operadores, Java Time, Java N-IO, Exceções, Expressões.",
 
 		tags: ["Java", "Orientação a Objetos"],
-		length: 6,
+		length: 11,
 		completedAt: new Date("2025-06-18"),
 		path: "rocketseat/fundamentos-java.pdf",
 		url: "https://app.rocketseat.com.br/certificates/191a7bb0-f56a-468c-9849-d3994ed0c273",
@@ -486,7 +499,7 @@ export const courseList: Course[] = [
 		tags: ["Docker", "Java", "Spring Boot", "Design Patterns", "SOLID"],
 		completedAt: new Date("2025-03-18"),
 		path: "fiap/fundamentos_de_desenvolvimento_em_java.jpeg",
-		githubUrl: "https://github.com/FIAP-24/tech_challenge_1"
+		githubUrl: "https://github.com/FIAP-24/tech_challenge_1",
 	},
 	// Alura
 	{

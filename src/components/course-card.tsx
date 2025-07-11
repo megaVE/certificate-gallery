@@ -1,12 +1,10 @@
 import type { Course } from "../@types/course";
-
+import skillsIcon from "../assets/icons/card-list-icon.svg";
+import completedIcon from "../assets/icons/check-square-icon.svg";
 import onlineFileIcon from "../assets/icons/file-earmark-pdf-icon.svg";
 import localFileIcon from "../assets/icons/filetype-pdf-icon.svg";
 import githubIcon from "../assets/icons/github-icon.svg";
 import unknownLocalFileIcon from "../assets/icons/patch-check-icon.svg";
-
-import skillsIcon from "../assets/icons/card-list-icon.svg";
-import completedIcon from "../assets/icons/check-square-icon.svg";
 import professorIcon from "../assets/icons/person-square-icon.svg";
 
 import { monthNumberToString } from "../utils/parser";

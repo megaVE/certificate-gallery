@@ -52,7 +52,6 @@ export function App() {
 						className="focus:outline-none bg-gray-100/5 border-r border-gray-100"
 						type="text"
 						name="query"
-						id="query"
 						placeholder="Buscar por..."
 						value={query}
 						onChange={(e) => setQuery(e.target.value)}
@@ -70,7 +69,7 @@ export function App() {
 						<h4 className="font-semibold text-lg">Ordenar por:</h4>
 						{Array.from(FiltersMap, ([key, value]) => ({ key, value })).map(
 							(filter) => (
-								// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+								// biome-ignore lint/a11y/useKeyWithClickEvents: <>
 								<li
 									key={filter.key}
 									className={cn(
