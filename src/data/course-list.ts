@@ -559,7 +559,7 @@ export const courseList: Course[] = [
 		description: "Projeto de Extensão",
 		tags: ["Inglês", "Cultura Inglesa"],
 		length: 16,
-		completedAt: new Date("22-12-2022"),
+		completedAt: new Date("2022-12-22"),
 		path: "misc/projeto-isf.pdf",
 	},
 ];
