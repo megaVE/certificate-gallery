@@ -501,6 +501,23 @@ export const courseList: Course[] = [
 		path: "fiap/fundamentos_de_desenvolvimento_em_java.jpeg",
 		githubUrl: "https://github.com/FIAP-24/tech_challenge_1",
 	},
+	{
+		name: "Architect Hero",
+		provider: "Fiap",
+		description: "",
+		tags: [
+			"Java",
+			"Spring Boot",
+			"MySQL",
+			"MongoDB",
+			"Cassandra",
+			"JUnit",
+			"Clean Architecture",
+		],
+		completedAt: new Date("2025-08-05"),
+		path: "fiap/architect_hero.jpeg",
+		githubUrl: "https://github.com/FIAP-24/tech_challenge_2",
+	},
 	// Alura
 	{
 		name: "PostgreSQL",
